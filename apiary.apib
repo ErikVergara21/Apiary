@@ -1,0 +1,61 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# Polls API
+
+Polls is a simple API allowing consumers to view polls and vote in them.
+
+## URL 1 [/user/usuari/{id}]
+
+### Peticio de dades de perfil [GET]
+
++ Parameters
+    + id (required, number, `0`)
+
++ Response 200 (application/json)
+
+        {
+            "result": true,
+            "response":
+                {
+                    "idUsuari": 1,
+                    "nom": "chuck",
+                    "cognom1": "Norris",
+                    "cognom2": "Supervia",
+                    "nickname": "cobra",
+                    "email": "chuck@gmail.com",
+                    "telefon": "123456789",
+                    "contrasenya": "pepe",
+                    "dataRegistre": "2017-03-30T22:35:07"
+                }
+        }
+
+### Modificacio de dades de perfil [PUT]
+
++ Parameters
+    + id (required, number, `0`)
+    
++ Request
+
+        {
+            "result": true,
+            "response":
+                {
+                    "idUsuari": 1,
+                    "nom": "chuck",
+                    "cognom1": "Norris",
+                    "cognom2": "Vergara",
+                    "nickname": "cobra22",
+                    "email": "chuck@gmail.com",
+                    "telefon": "123456789",
+                    "contrasenya": "pepe",
+                    "dataRegistre": "2017-03-30T22:35:07"
+                }
+        }
+
++ Response 201 (application/json)
+
+        {
+            "result": true,
+            "response": ""
+        }
