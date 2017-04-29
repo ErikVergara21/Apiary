@@ -9,15 +9,16 @@ Polls is a simple API allowing consumers to view polls and vote in them.
 
 ### Peticio de dades de perfil [GET]
 
+#### Cas de peticio correcta
+
+Si vols probar un cas de peticio incorrecta canvia el codi de Response a 500.
+
 + Parameters
     + id (required, number, `0`)
 
 + Response 200 (application/json)
 
         {
-            "result": true,
-            "response":
-                {
                     "idUsuari": 1,
                     "nom": "chuck",
                     "cognom1": "Norris",
@@ -27,10 +28,11 @@ Polls is a simple API allowing consumers to view polls and vote in them.
                     "telefon": "123456789",
                     "contrasenya": "pepe",
                     "dataRegistre": "2017-03-30T22:35:07"
-                }
         }
 
 ### Modificacio de dades de perfil [PUT]
+
+Si es vol fer el cas de peticio incorrecta canviar el result a false i posar un missatge d'error al response
 
 + Parameters
     + id (required, number, `0`)
@@ -38,10 +40,6 @@ Polls is a simple API allowing consumers to view polls and vote in them.
 + Request
 
         {
-            "result": true,
-            "response":
-                {
-                    "idUsuari": 1,
                     "nom": "chuck",
                     "cognom1": "Norris",
                     "cognom2": "Vergara",
@@ -49,11 +47,9 @@ Polls is a simple API allowing consumers to view polls and vote in them.
                     "email": "chuck@gmail.com",
                     "telefon": "123456789",
                     "contrasenya": "pepe",
-                    "dataRegistre": "2017-03-30T22:35:07"
-                }
         }
 
-+ Response 201 (application/json)
++ Response 200 (application/json)
 
         {
             "result": true,
