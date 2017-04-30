@@ -5,7 +5,7 @@ HOST: http://polls.apiblueprint.org/
 
 Polls is a simple API allowing consumers to view polls and vote in them.
 
-## URL 1 [/user/usuari/{id}]
+## URL 1 [/rest/usuari/{id}]
 
 ### Peticio de dades de perfil [GET]
 
@@ -46,7 +46,7 @@ Si es vol fer el cas de peticio incorrecta canviar el result a false i posar un 
                     "nickname": "cobra22",
                     "email": "chuck@gmail.com",
                     "telefon": "123456789",
-                    "contrasenya": "pepe",
+                    "contrasenya": "pepe"
         }
 
 + Response 200 (application/json)
@@ -55,3 +55,86 @@ Si es vol fer el cas de peticio incorrecta canviar el result a false i posar un 
             "result": true,
             "response": ""
         }
+        
+## URL 2 [/usuari/xat]
+
+### Xats oberts [GET]
+
++ Response 200 (application/json)
+
+        [
+        {
+            "idXat": 0,
+            "missatges": 
+            [
+                {
+                    "idMissatge": 0,
+                    "contingutMissatge": "Hola",
+                    "dataMissatge": "2017-03-30T22:35:07"
+                }
+            ],
+            "usuari1": 
+                {
+                    "nom": "chuck",
+                    "cognom1": "Norris",
+                    "cognom2": "Vergara",
+                    "nickname": "cobra22",
+                    "email": "chuck@gmail.com",
+                    "telefon": "123456789",
+                    "contrasenya": "pepe"
+                },
+            "usuari2":
+                {
+                    "nom": "pepe",
+                    "cognom1": "Norris",
+                    "cognom2": "Vergara",
+                    "nickname": "jefecito",
+                    "email": "chuck@gmail.com",
+                    "telefon": "123456789",
+                    "contrasenya": "pepe"
+                },
+            "ultimMissatge":
+                {
+                    "idMissatge": 1,
+                    "contingutMissatge": "JAJA",
+                    "dataMissatge": "2017-03-30T22:35:07"
+                }
+        },
+        {
+            "idXat": 1,
+            "missatges": 
+            [
+                {
+                    "idMissatge": 0,
+                    "contingutMissatge": "Hola",
+                    "dataMissatge": "2017-03-30T22:35:07"
+                }
+            ],
+            "usuari1": 
+                {
+                    "nom": "oscar",
+                    "cognom1": "Norris",
+                    "cognom2": "Vergara",
+                    "nickname": "tompe",
+                    "email": "chuck@gmail.com",
+                    "telefon": "123456789",
+                    "contrasenya": "pepe"
+                },
+            "usuari2":
+                {
+                    "nom": "carmen",
+                    "cognom1": "Norris",
+                    "cognom2": "Vergara",
+                    "nickname": "rompedor",
+                    "email": "chuck@gmail.com",
+                    "telefon": "123456789",
+                    "contrasenya": "pepe"
+                },
+            "ultimMissatge":
+                {
+                    "idMissatge": 1,
+                    "contingutMissatge": "Adios",
+                    "dataMissatge": "2017-03-30T22:35:07"
+                }
+        }
+        ]
