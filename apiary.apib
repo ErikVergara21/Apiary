@@ -20,14 +20,12 @@ Si vols probar un cas de peticio incorrecta canvia el codi de Response a 500.
 
         {
                     "idUsuari": 1,
-                    "nom": "chuck",
-                    "cognom1": "Norris",
+                    "nom": "Erik",
+                    "cognom1": "Vergara",
                     "cognom2": "Supervia",
-                    "nickname": "cobra",
-                    "email": "chuck@gmail.com",
-                    "telefon": "123456789",
-                    "contrasenya": "pepe",
-                    "dataRegistre": "2017-03-30T22:35:07"
+                    "nickname": "erik22",
+                    "email": "erik@gmail.com",
+                    "telefon": "123456789"
         }
 
 ### Modificacio de dades de perfil [PUT]
@@ -40,10 +38,10 @@ Si es vol fer el cas de peticio incorrecta canviar el result a false i posar un 
 + Request
 
         {
-                    "nom": "chuck",
-                    "cognom1": "Norris",
+                    "nom": "Erik",
+                    "cognom1": "Supervia",
                     "cognom2": "Vergara",
-                    "nickname": "cobra22",
+                    "nickname": "erik23",
                     "email": "chuck@gmail.com",
                     "telefon": "123456789",
                     "contrasenya": "pepe"
@@ -61,80 +59,168 @@ Si es vol fer el cas de peticio incorrecta canviar el result a false i posar un 
 ### Xats oberts [GET]
 
 + Response 200 (application/json)
+        
+        [
+
+          {
+        
+            "idXat": 0,
+        
+            "usuari1": {
+            
+              "idUser": 0,
+        
+              "nom": "Erik",
+        
+              "cognom1": "Norris",
+        
+              "cognom2": "Vergara",
+        
+              "nickname": "cobra",
+        
+              "email": "errik@gmail.com",
+        
+              "telefon": "123456789"
+        
+            },
+        
+            "usuari2": {
+            
+              "idUser": 1,
+        
+              "nom": "pepe",
+        
+              "cognom1": "Norris",
+        
+              "cognom2": "Vergara",
+        
+              "nickname": "pepe2",
+        
+              "email": "peep@gmail.com",
+        
+              "telefon": "123456789"
+        
+            },
+        
+            "ultimMissatge": {
+        
+              "idMissatge": 1,
+        
+              "contingutMissatge": "JAJA",
+        
+              "dataMissatge": "2017-03-30T22:35:07"
+        
+            }
+        
+          },
+        
+          {
+        
+            "idXat": 1,
+        
+            "usuari1": {
+            
+              "idUser": 0,
+        
+              "nom": "oscar",
+        
+              "cognom1": "Norris",
+        
+              "cognom2": "Vergara",
+        
+              "nickname": "Oscar",
+        
+              "email": "oscar@gmail.com",
+        
+              "telefon": "123456789"
+        
+            },
+        
+            "usuari2": {
+            
+              "idUser": 2,
+        
+              "nom": "carmen",
+        
+              "cognom1": "Norris",
+        
+              "cognom2": "Vergara",
+        
+              "nickname": "carmenn",
+        
+              "email": "carmen@gmail.com",
+        
+              "telefon": "123456789"
+        
+            },
+        
+            "ultimMissatge": {
+        
+              "idMissatge": 1,
+        
+              "contingutMissatge": "Adios",
+        
+              "dataMissatge": "2017-03-30T22:35:07"
+        
+            }
+        
+          }
+        
+        ]
+        
+## URL [/usuari/xat/{id}]
+### Missatges[GET]
+
++ Parameters
+    + id (required, number, `2`)
+    
++ Response 200 (application/json)
 
         [
         {
-            "idXat": 0,
-            "missatges": 
-            [
-                {
-                    "idMissatge": 0,
-                    "contingutMissatge": "Hola",
-                    "dataMissatge": "2017-03-30T22:35:07"
-                }
-            ],
-            "usuari1": 
-                {
-                    "nom": "chuck",
-                    "cognom1": "Norris",
-                    "cognom2": "Vergara",
-                    "nickname": "cobra22",
-                    "email": "chuck@gmail.com",
-                    "telefon": "123456789",
-                    "contrasenya": "pepe"
-                },
-            "usuari2":
-                {
-                    "nom": "pepe",
-                    "cognom1": "Norris",
-                    "cognom2": "Vergara",
-                    "nickname": "jefecito",
-                    "email": "chuck@gmail.com",
-                    "telefon": "123456789",
-                    "contrasenya": "pepe"
-                },
-            "ultimMissatge":
-                {
-                    "idMissatge": 1,
-                    "contingutMissatge": "JAJA",
-                    "dataMissatge": "2017-03-30T22:35:07"
-                }
+            "idMissatge": 0,
+            "contingutMissatge": "Hola",
+            "dataMissatge": "2017-03-30T22:35:07",
+            "usuari": 
+            {
+              "idUser": 2,
+        
+              "nom": "carmen",
+        
+              "cognom1": "Norris",
+        
+              "cognom2": "Vergara",
+        
+              "nickname": "Carmen",
+        
+              "email": "carmen@gmail.com",
+        
+              "telefon": "123456789",
+        
+              "contrasenya": "pepe"
+            }
         },
         {
-            "idXat": 1,
-            "missatges": 
-            [
-                {
-                    "idMissatge": 0,
-                    "contingutMissatge": "Hola",
-                    "dataMissatge": "2017-03-30T22:35:07"
-                }
-            ],
-            "usuari1": 
-                {
-                    "nom": "oscar",
-                    "cognom1": "Norris",
-                    "cognom2": "Vergara",
-                    "nickname": "tompe",
-                    "email": "chuck@gmail.com",
-                    "telefon": "123456789",
-                    "contrasenya": "pepe"
-                },
-            "usuari2":
-                {
-                    "nom": "carmen",
-                    "cognom1": "Norris",
-                    "cognom2": "Vergara",
-                    "nickname": "rompedor",
-                    "email": "chuck@gmail.com",
-                    "telefon": "123456789",
-                    "contrasenya": "pepe"
-                },
-            "ultimMissatge":
-                {
-                    "idMissatge": 1,
-                    "contingutMissatge": "Adios",
-                    "dataMissatge": "2017-03-30T22:35:07"
-                }
+            "idMissatge": 1,
+            "contingutMissatge": "Adios",
+            "dataMissatge": "2017-03-30T22:35:07",
+            "usuari": 
+            {
+              "idUser": 0,
+        
+              "nom": "oscar",
+        
+              "cognom1": "Norris",
+        
+              "cognom2": "Vergara",
+        
+              "nickname": "Oscar",
+        
+              "email": "Oscar@gmail.com",
+        
+              "telefon": "123456789",
+        
+              "contrasenya": "pepe"
+            }
         }
         ]
